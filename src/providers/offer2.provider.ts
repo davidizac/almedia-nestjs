@@ -18,7 +18,7 @@ export class Offer2Provider {
     return offer;
   }
 
-  getOfferArray(payload): Offer2DTO[] {
+  getOffers(payload): Offer2DTO[] {
     return Object.keys(payload.data).map((key) => payload.data[key]);
   }
 }

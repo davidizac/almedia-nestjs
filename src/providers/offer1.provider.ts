@@ -27,7 +27,7 @@ export class Offer1Provider {
     return offer;
   }
 
-  getOfferArray(payload): Offer1DTO[] {
+  getOffers(payload): Offer1DTO[] {
     return payload.response.offers;
   }
 }

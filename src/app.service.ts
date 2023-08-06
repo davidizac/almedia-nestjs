@@ -19,10 +19,10 @@ export class AppService {
   async handleJob() {
     const results: Offer[] = [];
     for (let provider of this.providers) {
-      const providerClass = ProviderFactory.getProvider(provider.name);
-      const offers = providerClass.getOfferArray(provider.payload);
+      const providerInstance = ProviderFactory.getProvider(provider.name);
+      const offers = providerInstance.getOffers(provider.payload);
       for (let offer of offers) {
-        const result = await providerClass.mapDTOToEntity(offer as any);
+        const result = await providerInstance.mapDTOToEntity(offer as any);
         if (result) results.push(result);
       }
     }
